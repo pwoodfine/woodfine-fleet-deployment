@@ -1,0 +1,19 @@
+---
+fleet_id: WOODFINE-FLEET-01
+owner: jwoodfine
+status: Active
+matrix_tier: Tier-4-OS
+---
+nodes:
+  - node_id: NODE-LAPTOP-A
+    role: fleet-infrastructure-onprem
+    hardware: MacBook Pro (Broadcom Substrate)
+    status: Provisioning
+    docs: [SYS-BOOT-01, PPN-01]
+    auth: [SYS-SEC-02] # Machine-Based Authorization
+
+  - node_id: NODE-IMAC-12
+    role: fleet-command-authority
+    hardware: iMac 12.1 (Foundry Host)
+    status: Active
+    docs: [SYS-ARCH-01, OPS-WORK-01]
