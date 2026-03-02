@@ -2,7 +2,7 @@
 
 # Node 1: Physical Infrastructure (Muscle)
 ### *Hardware Forensics & Silicon Boundaries*
-**Status: Provisioned | Tier: 1. Infrastructure**
+**Status: Verified (Tier 0 Base) | Tier: 1. Infrastructure**
 
 </div>
 
