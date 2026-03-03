@@ -1,33 +1,35 @@
 # Woodfine Fleet Manifest | Manifiesto de Flota Woodfine
 ### *Operational Deployment & Fleet Orchestration*
 
----
-
-## 📡 Fleet Provisioning Status | Estado de Aprovisionamiento
-### Track 1: Infrastructure (Private Network) | Infraestructura (Red Privada)
-| Node | Institutional Role | Hardware Matrix | Connection State |
-| :--- | :--- | :--- | :--- |
-| **Node 1 (Muscle)** | `fleet-infrastructure-leased` | Laptop Edge Anchor | 🟢 Active (Virtualized Shim) |
-| **Node 2 (Relay)** | `fleet-infrastructure-gcp` | Cloud Anchor (GCP) | 🟢 Active (Virtualized Shim) |
-| **Node 3 (Brain)** | `route-network-admin` | iMac Command Gateway | 🟢 Active (Foundry Host) |
-
-### Track 2: Totebox Orchestration (Active Services) | Orquestación Totebox
-| Service Target (Mesh) | Workload Payload | Authorization Console | Status |
-| :--- | :--- | :--- | :--- |
-| **`gateway-interface-command`** | Master Cluster Aggregator | `node-console-keys` | 🟢 Active |
-| **`cluster-totebox-corporate-1`** | Corporate Content Service (`service-content`) | `node-console-content` | 🟡 Provisioning |
-| **`cluster-totebox-personnel-1`** | Personnel Identity Service (`service-people`) | `node-console-people` | 🟡 Provisioning |
-| **`cluster-totebox-personnel-2`** | Standalone Email Service (`service-email`) | `node-console-email` | 🟡 Provisioning |
+> **OPERATIONAL POSTURE [MARCH 2026]:**
+> **Phase:** 3-Node Trustworthy System Deployment
+> **Compliance Standard:** SOC 3 & DARP (Mathematically Enforced)
+> **Modelo de Datos:** Archivos deterministas (Files over Databases).
 
 ---
 
-## 🏢 Corporate Mandate
-Woodfine Management Corp. serves as the operating arm for **Woodfine Capital Projects Inc.**. Our mission is the secure procurement and management of real property assets through **Sovereign Computing**.
+## 📡 Deployment Matrix (3-Track System)
+Woodfine operates a 100% Digital First infrastructure. All corporate data is natively machine-readable, secured in decentralized Totebox Archives, and audited by our foundation engines.
 
-### ⚖️ Operational Pillars
-* **Perpetual Equity**: Long-term value creation over short-term liquidity.
-* **Risk Management**: Strict adherence to a 1.2 Interest Coverage Ratio.
-* **Sovereignty**: All data is secured on decentralized PointSav Totebox nodes.
+### 1. Infrastructure (Physical Network)
+| Node | Institutional Role | Connection State |
+| :--- | :--- | :--- |
+| **Node 1 (Muscle)** | Laptop Edge Anchor | 🟢 Active (Virtualized Shim) |
+| **Node 2 (Relay)** | Cloud Anchor (GCP) | 🟢 Active (Virtualized Shim) |
+| **Node 3 (Brain)** | iMac Command Gateway | 🟢 Active (Foundry Host) |
+
+### 2. Totebox (Data Archives)
+| Asset Cluster | Service Workload | Compliance Guarantee |
+| :--- | :--- | :--- |
+| **Corporate Totebox** | `service-content` | SOC 3 Processing Integrity |
+| **Personnel Totebox** | `service-people` | SOC 3 Confidentiality |
+| **Property Totebox** | Real Estate Ledgers | DARP Export Manifest |
+
+### 3. Workplace (Desktop Interface)
+| Interface Terminal | Authoring Output | Status |
+| :--- | :--- | :--- |
+| **Node 1 Terminals** | `app-workplace-editor` (Structured Files) | 🟡 Provisioning |
+| **Node 3 Terminals** | `app-workplace-comm` (Maildir Storage) | 🟡 Provisioning |
 
 ---
 *© 2026 Woodfine Management Corp.*
