@@ -6,7 +6,7 @@
 ## 📡 Fleet Provisioning Status
 | Node | Institutional Role | Hardware Matrix | Connection State |
 | :--- | :--- | :--- | :--- |
-| **Node 1 (Muscle)** | `fleet-infrastructure-onprem` | Laptop Edge Anchor | 🟢 Active (Virtualized Shim) |
+| **Node 1 (Muscle)** | `fleet-infrastructure-leased` | Laptop Edge Anchor | 🟢 Active (Virtualized Shim) |
 | **Node 2 (Relay)** | `fleet-infrastructure-gcp` | Cloud Anchor (GCP) | 🟢 Active (Virtualized Shim) |
 | **Node 3 (Brain)** | `route-network-admin` | iMac Command Gateway | 🟢 Active (Foundry Host) |
 
