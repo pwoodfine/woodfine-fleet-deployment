@@ -29,4 +29,4 @@ Woodfine Management Corp. serves as the operating arm for **Woodfine Capital Pro
 | **`node-console-people`** | `cluster-totebox-personnel-1` | Personnel Identity Service |
 
 ---
-*© 2026 Woodfine Management Corp. Orchestrated via PointSav Digital Systems AG.*
+*© 2026 Woodfine Management Corp.*
