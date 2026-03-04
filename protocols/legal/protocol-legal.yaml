@@ -1,0 +1,14 @@
+# LEGAL Protocol Manifest
+protocol_name: LEGAL
+capability_requests:
+  - /home/mathew/Foundry/fleet-woodfine/content-wiki-corporate/content-wiki-corporate.csv
+  - /home/mathew/Foundry/fleet-woodfine/content-wiki-projects/content-wiki-projects.csv
+  - /home/mathew/Foundry/factory-pointsav/content-wiki-documentation/content-wiki-documentation.csv
+collision_priority:
+  1: protocol-legal.csv
+  2: content-wiki-corporate.csv
+  3: content-wiki-projects.csv
+  4: content-wiki-documentation.csv
+operational_rules:
+  strict_liability_definitions: true
+  statutory_compliance: true

@@ -1,0 +1,29 @@
+# MEMO Protocol Manifest - Long-Form Institutional Communications
+protocol_name: MEMO
+capability_requests:
+  - /home/mathew/Foundry/fleet-woodfine/content-wiki-corporate/content-wiki-corporate.csv
+  - /home/mathew/Foundry/fleet-woodfine/content-wiki-projects/content-wiki-projects.csv
+  - /home/mathew/Foundry/factory-pointsav/content-wiki-documentation/content-wiki-documentation.csv
+collision_priority:
+  1: protocol-memo.csv
+  2: content-wiki-corporate.csv
+  3: content-wiki-projects.csv
+  4: content-wiki-documentation.csv
+operational_rules:
+  # Structural & Tone Mandates
+  capex_posture: true                  # Align narrative with real estate infrastructure; reject SaaS styling
+  plain_language: true                 # Enforce ISO 24495-1 standard; neurodivergent accessibility
+  structural_headers: true             # Restrict to two-to-three-word noun phrases
+  factuality_enforcement: true         # Remove subjective qualifiers. State exactly what the system does.
+
+  # Legal & IP Mandates
+  anti_puffery_verbs: true             # Forbid absolute accomplishment verbs. Use "is engineered to" or "is architected to"
+  entity_precision: true               # Never append statutory suffixes (e.g. AG, Inc.) prior to final incorporation
+  jurisdictional_agnosticism: true     # Abstract localized terms (e.g., Corporate Tax Identifier) to prevent Jurisdictional Fracture
+  trademark_first_use: true            # Append ™ only to first prominent/body use. Name architectural mechanics defensively
+
+  # Blacklist
+  banned_buzzwords: 
+    - sovereign
+    - disrupt
+    - revolutionary

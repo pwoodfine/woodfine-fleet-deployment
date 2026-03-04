@@ -1,0 +1,17 @@
+# COMM Protocol Manifest - Short-Form Transactional & Technical Messaging
+protocol_name: COMM
+capability_requests:
+  - /home/mathew/Foundry/fleet-woodfine/content-wiki-corporate/content-wiki-corporate.csv
+  - /home/mathew/Foundry/fleet-woodfine/content-wiki-projects/content-wiki-projects.csv
+  - /home/mathew/Foundry/factory-pointsav/content-wiki-documentation/content-wiki-documentation.csv
+collision_priority:
+  1: protocol-comm.csv
+  2: content-wiki-documentation.csv    # Prioritize IT/Digital definitions for external technical accuracy
+  3: content-wiki-projects.csv
+  4: content-wiki-corporate.csv
+operational_rules:
+  # Structural & Tone Mandates
+  transactional_messaging: true        # Optimize for brevity and direct action
+  external_facing_tone: true           # Maintain professional, public-ready formatting
+  technical_accuracy_priority: true    # Prioritize PointSav nomenclature over general corporate terms
+  plain_language: true                 # Enforce ISO 24495-1 standard
