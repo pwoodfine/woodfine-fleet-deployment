@@ -17,3 +17,9 @@ nodes:
     hardware: iMac 12.1 (Foundry Host)
     status: Active
     docs: [SYS-ARCH-01, OPS-WORK-01]
+
+  - node_id: NODE-GCP-CORPORATE
+    role: cluster-totebox-corporate
+    hardware: GCP e2-micro (Sandbox)
+    status: Active Testing
+    docs: [SERVICE-CONTENT-01, PPN-01]
