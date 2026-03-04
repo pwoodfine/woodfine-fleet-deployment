@@ -1,6 +1,6 @@
 <div align="center">
 
-# Node 3: Command Gateway (Brain)
+# Node 3: PointSav Command Centre™ (Brain)
 ### *Hardware Forensics & Cryptographic Authority*
 **Status: Active | Tier: 4. Gateway**
 

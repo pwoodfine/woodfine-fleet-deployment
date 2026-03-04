@@ -16,7 +16,7 @@ Woodfine operates a 100% Digital First infrastructure. All corporate data is nat
 | :--- | :--- | :--- |
 | **Node 1 (Muscle)** | Laptop Edge Anchor | 🟢 Active (Virtualized Shim) |
 | **Node 2 (Relay)** | Cloud Anchor (GCP) | 🟢 Active (Virtualized Shim) |
-| **Node 3 (Brain)** | iMac Command Gateway | 🟢 Active (Foundry Host) |
+| **Node 3 (Brain)** | iMac PointSav Command Centre™ | 🟢 Active (Foundry Host) |
 
 ### 2. Totebox (Data Archives)
 | Asset Cluster | Service Workload | Compliance Guarantee |
