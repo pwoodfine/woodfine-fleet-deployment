@@ -6,10 +6,8 @@
 > **Compliance Standard:** SOC 3 & DARP (Mathematically Enforced)
 > **Modelo de Datos:** Archivos deterministas (Files over Databases).
 
----
-
 ## 📡 Deployment Matrix (3-Track System)
-Woodfine operates a 100% Digital First infrastructure. All corporate data is natively machine-readable, secured in decentralized Totebox Archives, and audited by our foundation engines.
+Woodfine operates a 100% Digital First infrastructure. We secure all corporate data in decentralized Totebox Archives and audit actions via foundational PointSav engines.
 
 ### 1. Infrastructure (Physical Network)
 | Node | Institutional Role | Connection State |
@@ -28,8 +26,8 @@ Woodfine operates a 100% Digital First infrastructure. All corporate data is nat
 ### 3. Workplace (Desktop Interface)
 | Interface Terminal | Authoring Output | Status |
 | :--- | :--- | :--- |
-| **Node 1 Terminals** | `app-workplace-editor` (Structured Files) | 🟡 Provisioning |
-| **Node 3 Terminals** | `app-workplace-comm` (Maildir Storage) | 🟡 Provisioning |
+| **Node 1 Terminals** | `app-workplace-editor` | 🟡 Provisioning |
+| **Node 3 Terminals** | `app-workplace-comm` | 🟡 Provisioning |
 
 ---
 *© 2026 Woodfine Management Corp.*
