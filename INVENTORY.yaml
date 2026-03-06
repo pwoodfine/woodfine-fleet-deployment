@@ -1,16 +1,27 @@
 ---
 fleet_id: WOODFINE-FLEET-01
-owner: jwoodfine
+owner: Woodfine Management Corp.
 status: Active
 matrix_tier: Tier-4-OS
 ---
+structural_map: |
+  [EXECUTION NODE]: cluster-totebox-corporate-1
+  └── USERSPACE: svc-mediakit-woodfine             <-- (100% Portable Woodfine Edge Node)
+      ├── app-mediakit-knowledge/                  <-- (Live rendered frontend)
+      │   └── woodfine-brutalist.html                  
+      ├── app-mediakit-telemetry                   <-- (Compiled executable instance | Port 8082)
+      ├── assets/                                  <-- (Local Micro-Vault)
+      │   ├── GeoLite2-City.mmdb                   <-- (Local Offline Geolocation DB)
+      │   └── ledger_telemetry.csv                 <-- (Pre-Resolved Local Target)
+      └── outbox/
+          └── REPORT_WOODFINE_TIMESTAMP.md         <-- (4:00 AM Synthesizer Egress)
 nodes:
   - node_id: NODE-LAPTOP-A
     role: fleet-infrastructure-onprem
     hardware: MacBook Pro (Broadcom Substrate)
     status: Provisioning
     docs: [SYS-BOOT-01, PPN-01]
-    auth: [SYS-SEC-02] # Machine-Based Authorization
+    auth: [SYS-SEC-02]
 
   - node_id: NODE-IMAC-12
     role: fleet-command-authority

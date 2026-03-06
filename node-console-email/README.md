@@ -4,7 +4,7 @@
 This console is a **Direct-Action Terminal** designed for the siloed management of the standalone personnel email environment. It is intentionally isolated from the `gateway-interface-command` to prevent cross-contamination of administrative keys.
 
 ## 🌐 Connectivity
-* **Target:** `cluster-totebox-personnel-2` (Mesh VM)
+* **Target:** `cluster-totebox-personnel-1` (Mesh VM)
 * **Protocol:** Direct Sovereign Link (DSL)
 * **Authorization:** Unique MBA Signature (Email Silo)
 
