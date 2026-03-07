@@ -14,7 +14,7 @@
 ## 📖 The Institutional Narrative
 Woodfine Management Corp. bypasses legacy cloud vulnerabilities by deploying its enterprise on isolated **Sovereign Nodes**. This guarantees data integrity and DARP compliance for our institutional partners.
 
-### 📡 Active Deployment Matrix
+### 📡 Deployment Matrix
 | Node ID | Operational Track | Substrate | Status |
 | :--- | :--- | :--- | :--- |
 | **node-wf-vault-01** | `Stateful Storage` | `os-totebox` | 🟢 **Active** |
