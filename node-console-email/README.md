@@ -1,11 +1,28 @@
-# Woodfine Fleet Showcase: node-console-email
-### *Institutional Brutalism & Processing Integrity*
+<div align="center">
 
-**Status: Generic Showcase** | **Silo: fleet-woodfine**
+# Fleet Deployment Node | Nodo de Despliegue de Flota
+### *An operational deployment manifest for sovereign enterprise infrastructure.*
 
-## 📜 Operational Mandate
-This directory serves as the public structural manifest for the node-console-email node within the Woodfine Sovereign Fleet.
+</div>
 
-> **Directory Nomenclature Ledger**
-> All files committed to this directory MUST adhere to the following strict prefix taxonomy:
-> * `GUIDE-*`: Step-by-step operational deployment manuals.
+<br/>
+
+> [!WARNING]
+> **SOVEREIGN FRAMEWORK DECLARATION**
+> This repository is a reference implementation of the Sovereign Data Protocol. It enforces absolute data isolation. It contains zero active proprietary network payloads.
+
+| Architecture Tier | Component Role | Governance Anchor |
+| :--- | :--- | :--- |
+| 🟡 Provisioning | Fleet Node | Sovereign Disclosure Standard |
+
+## 📖 Architectural Audit Placeholder
+This directory serves as a structural placeholder. It maps directly to the corporate deployment matrix. 
+
+## ⚙️ Execution Playbooks
+This index routes to the physical execution commands required to provision this node.
+
+* [➔ GUIDE-PROVISION-NODE](GUIDE-PROVISION-NODE.md)
+
+---
+*© 2026 Woodfine Management Corp.*
+*Public Architectural Blueprint. Governed by the Sovereign Data Protocol.*

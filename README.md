@@ -1,29 +1,37 @@
 <div align="center">
 
 # Woodfine Fleet Manifest | Manifiesto de Flota Woodfine
-### *Operational Deployment & Fleet Orchestration*
+### *The active operational ledger of our sovereign corporate infrastructure.*
+
+<br/>
+
+**[ ➔ Corporate Governance Wiki ](https://github.com/woodfine/content-wiki-corporate)** | **[ ➔ Real Estate Projects Wiki ](https://github.com/woodfine/content-wiki-projects)**
+**[ ➔ VIEW SYSTEM SOURCE CODE (POINTSAV) ](https://github.com/pointsav/pointsav-monorepo)**
 
 </div>
 
 <br/>
 
 > [!WARNING]
-> **SECURITY BOUNDARY DECLARATION**
-> This repository acts strictly as a structural map. To enforce DARP and SOC 3 mandates, **no live institutional data, ledgers, or property metrics are stored within this SaaS domain.**
+> **SOVEREIGN FRAMEWORK DECLARATION | DECLARACIÓN DE MARCO SOBERANO**
+> This repository maps our active operational network. We store zero live institutional data, ledgers, or property metrics on this public website.
 
-## 📖 The Institutional Narrative
-Woodfine Management Corp. bypasses legacy cloud vulnerabilities by deploying its enterprise on isolated **Sovereign Nodes**. This guarantees data integrity and DARP compliance for our institutional partners.
+| Architecture Tier | Component Role | Governance Anchor |
+| :--- | :--- | :--- |
+| 🟢 Active | Primary Customer Hub | Sovereign Disclosure Standard |
 
-### 📡 Deployment Matrix
-| Node ID | Operational Track | Substrate | Status |
-| :--- | :--- | :--- | :--- |
-| **node-wf-vault-01** | `Stateful Storage` | `os-totebox` | 🟢 **Active** |
-| **node-wf-edge-01** | `Stateless Presentation` | `os-mediakit` | 🟢 **Active** |
-| **node-foundry-brain** | `Infrastructure Control` | `os-network-admin` | 🟢 **Active** |
+## 📖 The Operational Network
+Woodfine Management Corp. operates on secure physical servers. We bypass legacy cloud vulnerabilities to protect our investors. Our active real estate ledgers function as isolated physical safety deposit boxes. 
+
+This is our master operational hub. We are the primary institutional customer for the PointSav OS. We use this sovereign architecture to secure multi-generational capital. Our strict mathematical isolation guarantees fiduciary compliance. 
+
+### 📡 Active Fleet Matrix
+| Asset Target | Operational Track | Status |
+| :--- | :--- | :--- |
+| **Corporate Vault** | Stateful Storage | 🟢 Active |
+| **Public Showcase** | Stateless Presentation | 🟢 Active |
+| **Command Center** | Infrastructure Control | 🟢 Active |
 
 ---
-*© 2026 Woodfine Management Corp. Adheres to Leapfrog 2030 standards.*
-
-> **Directory Nomenclature Ledger**
-> All files committed to this directory MUST adhere to the following strict prefix taxonomy:
-> * `GUIDE-*`: Step-by-step operational deployment manuals.
+*© 2026 Woodfine Management Corp.*
+*Public Architectural Blueprint. Governed by the Sovereign Data Protocol.*
