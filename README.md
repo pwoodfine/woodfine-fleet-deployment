@@ -1,38 +1,13 @@
-<div align="center">
-
-# Woodfine Fleet Manifest | Manifiesto de Flota Woodfine
-### *The active operational ledger of our sovereign corporate infrastructure.*
-
-<br/>
-
-**[ ➔ Corporate Governance Wiki ](https://github.com/woodfine/content-wiki-corporate)**<br/>
-**[ ➔ Real Estate Projects Wiki ](https://github.com/woodfine/content-wiki-projects)**<br/>
-**[ ➔ System Source Code ](https://github.com/pointsav/pointsav-monorepo)**
-
-</div>
-
-<br/>
-
-> [!WARNING]
-> **SOVEREIGN FRAMEWORK DECLARATION | DECLARACIÓN DE MARCO SOBERANO**
-> This repository maps our active operational network. We store zero live institutional data, ledgers, or property metrics on this public website.
-
-| Architecture Tier | Component Role | Governance Anchor |
-| :--- | :--- | :--- |
-| 🟢 Active | Primary Customer Hub | Sovereign Disclosure Standard |
-
-## 📖 The Operational Network
-Woodfine Management Corp. operates on secure physical servers. We bypass legacy cloud vulnerabilities to protect our investors. Our active real estate ledgers function as isolated physical safety deposit boxes. 
-
-This is our master operational hub. We are the primary institutional customer for the PointSav OS. We use this sovereign architecture to secure multi-generational capital. Our strict mathematical isolation guarantees fiduciary compliance. 
-
-### 📡 Active Fleet Matrix
-| Asset Target | Operational Track | Status |
-| :--- | :--- | :--- |
-| **Corporate Vault** | Stateful Storage | 🟢 Active |
-| **Public Showcase** | Stateless Presentation | 🟢 Active |
-| **Command Center** | Infrastructure Control | 🟢 Active |
+# 🏢 WOODFINE FLEET DEPLOYMENT
+**Entity:** Woodfine Management Corp. (The Customer)
+**Function:** Operational Execution & Corporate Governance
 
 ---
-*© 2026 Woodfine Management Corp.*
-*Public Architectural Blueprint. Governed by the Sovereign Data Protocol.*
+## I. ARCHITECTURAL MANDATE
+This repository is the operational staging ground for Woodfine Management Corp. It strictly executes the engineering logic authored by PointSav Digital Systems™ (The Vendor). It houses the configurations, marketing frontends, and intelligence ledgers required to maintain absolute sovereign control over the enterprise's digital and physical assets.
+
+## II. CONTAINED ASSETS
+* `media-marketing-landing`: The operational Tier-3 Edge Delivery network. It integrates the Zero-Cookie telemetry diode (DS-ADR-06) to capture geographic intelligence without compromising investor privacy or relinquishing data to third-party brokers.
+
+## III. LICENSING
+Refer to the `LICENSE` file in this directory. All operational configurations, digital assets, and corporate frameworks are strictly reserved by Woodfine Capital Projects Inc.
