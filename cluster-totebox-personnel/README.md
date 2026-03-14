@@ -1,15 +1,19 @@
 # 🚢 CLUSTER-TOTEBOX-PERSONNEL
 **Entity:** Woodfine Management Corp. (The Customer)
 **Taxonomy:** Tier-3 Fleet Node
-**Status:** Provisioning / Active Deployment
+**Status:** Active Deployment
 
 ---
 
 ## I. OPERATIONAL MANDATE
-This directory serves as a physical deployment node within the Woodfine Management Corp. corporate infrastructure. It maps directly to the active fleet inventory and governs the ingestion of compiled PointSav OS binaries.
+This directory represents the isolated data vault containing personnel communications, identity ledgers, and operational intelligence routing matrices. 
 
-## II. SOVEREIGN FRAMEWORK DECLARATION
-To enforce SOC 3 and DARP compliance, this node is structured to operate on physically isolated, Customer-owned architecture. It strictly enforces the Sovereign Data Protocol, guaranteeing zero leakage to third-party cloud analytics or foreign intelligence models.
+It intercepts data from external edge networks and utilizes the Sovereign Engine to extract Active Intelligence before permanently securing the artifacts.
 
-## III. LICENSING
-This operational node is governed by the fiduciary parameters of Woodfine Capital Projects Inc. Refer to the root `LICENSE` file. All corporate frameworks and ledger architectures are strictly reserved.
+## II. EXECUTION PLAYBOOKS
+This node strictly adheres to the following operational guides:
+* [➔ GUIDE-totebox-orchestration](GUIDE-totebox-orchestration.md)
+* [➔ GUIDE-physical-egress](GUIDE-physical-egress.md)
+
+## III. SOVEREIGN FRAMEWORK DECLARATION
+To enforce SOC 3 and DARP compliance, this node operates physically isolated from the core network. It strictly enforces the Sovereign Data Protocol, guaranteeing zero leakage to third-party cloud analytics.
