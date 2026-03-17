@@ -15,4 +15,4 @@ To enforce SOC 3 and DARP compliance, this node is structured to operate on phys
 This operational node is governed by the fiduciary parameters of Woodfine Capital Projects Inc. Refer to the root `LICENSE` file. All corporate frameworks and ledger architectures are strictly reserved.
 
 ## ⚙️ Execution Playbooks
-* [➔ GUIDE-01: Verification Surveyor](GUIDE-01-Verification-Surveyor.md)
+* [➔ guide-01: Verification Surveyor](guide-Verification-Surveyor.md)

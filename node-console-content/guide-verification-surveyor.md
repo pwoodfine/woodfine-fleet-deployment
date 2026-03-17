@@ -1,4 +1,4 @@
-# 🧭 GUIDE-01: Verification Surveyor Operations
+# 🧭 guide-01: Verification Surveyor Operations
 **Operational Tier:** 3 (Fleet Deployment)
 **Target Node:** node-console-content
 

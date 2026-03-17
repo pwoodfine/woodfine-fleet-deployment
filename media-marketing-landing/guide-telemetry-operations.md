@@ -1,4 +1,4 @@
-# 🧭 GUIDE-01: TELEMETRY OPERATIONS & COMPLIANCE
+# 🧭 guide-01: TELEMETRY OPERATIONS & COMPLIANCE
 **Operational Tier:** 3 (Fleet Deployment)
 **Standard:** DS-ADR-06 (Zero-Cookie Architecture)
 **Software Engine:** PointSav Omni-Matrix (v1.2.0 - Compiled Rust Core)
