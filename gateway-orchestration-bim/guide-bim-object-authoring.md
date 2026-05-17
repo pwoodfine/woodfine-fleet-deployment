@@ -1,7 +1,7 @@
 ---
 schema: foundry-doc-v1
 title: "Authoring BIM Objects"
-slug: guide-bim-token-authoring
+slug: guide-bim-object-authoring
 type: guide
 status: active
 bcsc_class: customer-internal
