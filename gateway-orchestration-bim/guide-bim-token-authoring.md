@@ -1,17 +1,17 @@
 ---
 schema: foundry-doc-v1
-title: "Authoring BIM Tokens"
+title: "Authoring BIM Objects"
 slug: guide-bim-token-authoring
 type: guide
 status: active
 bcsc_class: customer-internal
-last_edited: 2026-05-07
+last_edited: 2026-05-17
 editor: pointsav-engineering
 ---
 
 ## Prerequisites
 
-- Write access to the token vault repository (`woodfine-design-bim` or equivalent).
+- Write access to the BIM Object vault repository (`woodfine-bim-library` or equivalent).
 - Git configured with your commit identity.
 - A text editor with JSON schema validation (optional but recommended).
 - `ifctester` installed for IDS file validation:
@@ -21,8 +21,8 @@ editor: pointsav-engineering
 
 ## Purpose
 
-This guide explains how to add a new BIM Token to a sovereign token vault. At v0.0.1,
-tokens are authored as DTCG JSON files committed directly to git. The four-zone CMS
+This guide explains how to add a new BIM Object to a sovereign BIM Object vault. At v0.0.1,
+BIM Objects are authored as DTCG JSON files committed directly to git. The four-zone CMS
 authoring interface is intended for v0.1.x and will wrap the same file operations.
 
 ## Procedure
@@ -64,8 +64,8 @@ environment element it is, where it fits in the IFC hierarchy, and how it is cla
 4. Add the `applicable_psets` array using the IFC 4.3 entity specification page, which
    lists applicable property sets for each entity type.
 
-**File location:** Add the token to the correct category file in
-`woodfine-design-bim/tokens/bim/`:
+**File location:** Add the BIM Object to the correct category file in
+`woodfine-bim-library/tokens/bim/`:
 
 | Element type | File |
 |---|---|
@@ -80,7 +80,7 @@ environment element it is, where it fits in the IFC hierarchy, and how it is cla
 
 ### Zone 2 — Regulation
 
-The Regulation zone adds jurisdiction-specific requirements to the token. Each entry is
+The Regulation zone adds jurisdiction-specific requirements to the BIM Object. Each entry is
 one constraint from one jurisdiction.
 
 **Overlay file location:**
@@ -118,7 +118,7 @@ woodfine-design-bim/regulation/<jurisdiction-code>/
 
 3. Validate the IDS file: `ifctester --ids <file>.ids --report json`
 
-4. Add the overlay reference to the token entry:
+4. Add the overlay reference to the BIM Object entry:
    ```json
    "regulation_overlays": [
      {
@@ -136,7 +136,7 @@ woodfine-design-bim/regulation/<jurisdiction-code>/
 ### Zone 3 — Climate Zone
 
 The Climate Zone zone adds climate-based performance requirements. Edit
-`woodfine-design-bim/tokens/bim/climate-zones.dtcg.json` directly.
+`woodfine-bim-library/tokens/bim/climate-zones.dtcg.json` directly.
 
 **Adding a new climate zone row:**
 
@@ -170,11 +170,11 @@ two rows with the same `parameter` name and a `unit_system` discriminator field.
 **Commit:**
 
 ```bash
-git add woodfine-design-bim/tokens/bim/ woodfine-design-bim/regulation/
-git commit -m "feat(tokens): add <token-name> — <one-line description>"
+git add woodfine-bim-library/tokens/bim/ woodfine-bim-library/regulation/
+git commit -m "feat(objects): add <object-name> — <one-line description>"
 ```
 
-**Reload the token catalog:**
+**Reload the BIM Object catalog:**
 
 ```bash
 # On the deployment host
@@ -183,35 +183,35 @@ systemctl restart app-orchestration-bim
 
 ## Expected Outcome
 
-- The new token appears at `https://bim.woodfinegroup.com/tokens`.
-- The token detail page loads at `https://bim.woodfinegroup.com/tokens/<category-key>`.
-- `https://bim.woodfinegroup.com/tokens.json` includes the new token key.
+- The new BIM Object appears at `https://bim.woodfinegroup.com/tokens`.
+- The BIM Object detail page loads at `https://bim.woodfinegroup.com/tokens/<category-key>`.
+- `https://bim.woodfinegroup.com/tokens.json` includes the new BIM Object key.
 
 ## Verification
 
 ```bash
-# Token visible in catalog
-curl -s https://bim.woodfinegroup.com/tokens | grep "<token-name>"
+# BIM Object visible in catalog
+curl -s https://bim.woodfinegroup.com/tokens | grep "<object-name>"
 
-# Token detail page loads
+# BIM Object detail page loads
 curl -s https://bim.woodfinegroup.com/tokens/<category-key> | grep "ifc_class"
 
-# Machine surface includes new token
-curl -s https://bim.woodfinegroup.com/tokens.json | jq '.["<category>.<token-name>"] | .ifc_class'
+# Machine surface includes new BIM Object
+curl -s https://bim.woodfinegroup.com/tokens.json | jq '.["<category>.<object-name>"] | .ifc_class'
 # Expected: the ifc_class value you authored
 ```
 
 ## Rollback
 
-To undo a token addition:
+To undo a BIM Object addition:
 
 ```bash
-cd woodfine-design-bim
+cd woodfine-bim-library
 git revert HEAD --no-edit
 systemctl restart app-orchestration-bim
 ```
 
-Note: DESIGN-TOKEN changes — additions to the token primitives in
-`pointsav-design-system` — require Master co-sign in frontmatter per DOCTRINE.md before
-the Root session commits to the design system. Customer vault additions to
-`woodfine-design-bim` do not require Master co-sign.
+Note: DESIGN-TOKEN changes — additions to the BIM Object primitives in
+`pointsav-design-system` — require Master co-sign in frontmatter per the platform governance
+process before the Root session commits to the design system. Customer vault additions to
+`woodfine-bim-library` do not require Master co-sign.

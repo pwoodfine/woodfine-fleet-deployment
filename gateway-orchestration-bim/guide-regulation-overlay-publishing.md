@@ -5,13 +5,13 @@ slug: guide-regulation-overlay-publishing
 type: guide
 status: active
 bcsc_class: customer-internal
-last_edited: 2026-05-07
+last_edited: 2026-05-17
 editor: pointsav-engineering
 ---
 
 ## Prerequisites
 
-- Write access to the `woodfine-design-bim` token vault repository.
+- Write access to the `woodfine-bim-library` BIM Object vault repository.
 - Git configured with your commit identity.
 - `ifctester` installed for IDS validation:
   ```bash
@@ -22,12 +22,12 @@ editor: pointsav-engineering
 
 ## Purpose
 
-A Regulatory Overlay adds jurisdiction-specific requirements to one or more BIM Token
+A Regulatory Overlay adds jurisdiction-specific requirements to one or more BIM Object
 types. Each overlay is an independently versioned bundle of three files: an IDS 1.0
 constraint file, an optional IFC geometric exclusion fragment, and a YAML metadata
 file. This guide covers authoring, validating, and committing a complete overlay.
 
-All paths are relative to the `woodfine-design-bim` repository root.
+All paths are relative to the `woodfine-bim-library` repository root.
 
 ## Procedure
 
@@ -168,10 +168,10 @@ ifctester --ids regulation/CA-BC/ca-bc-bcbc2024-exterior-wall.ids \
           --output regulation/CA-BC/validation-report.json
 ```
 
-### Step 6 — Register in the Token Vault
+### Step 6 — Register in the BIM Object Vault
 
-Add the overlay reference to the relevant DTCG token file. Open
-`tokens/bim/elements.dtcg.json` and add the overlay to the element token:
+Add the overlay reference to the relevant DTCG object file. Open
+`tokens/bim/elements.dtcg.json` and add the overlay to the element BIM Object:
 
 ```json
 "elements.IfcWall": {
@@ -202,7 +202,7 @@ systemctl restart app-orchestration-bim
 
 ## Expected Outcome
 
-- The overlay appears in the Regulation tab for the relevant token at
+- The overlay appears in the Regulation tab for the relevant BIM Object at
   `https://bim.woodfinegroup.com/tokens/elements.dtcg`.
 - `ifctester` syntax validation returns `"status": "pass"` for the IDS file.
 - The YAML metadata is committed to `regulation/<jurisdiction>/` alongside the IDS file.
@@ -215,7 +215,7 @@ ifctester --ids regulation/<jurisdiction>/<overlay-id>.ids --report json \
     | python3 -c "import sys,json; r=json.load(sys.stdin); print(r.get('status'))"
 # Expected: pass
 
-# Overlay visible in token catalog API
+# Overlay visible in BIM Object catalog API
 curl -s https://bim.woodfinegroup.com/tokens.json \
     | jq '.["elements.IfcWall"].regulation_overlays[].id'
 # Expected: "<overlay-id>" in the output list
@@ -226,7 +226,7 @@ curl -s https://bim.woodfinegroup.com/tokens.json \
 To remove a published overlay:
 
 ```bash
-cd woodfine-design-bim
+cd woodfine-bim-library
 git revert HEAD --no-edit
 systemctl restart app-orchestration-bim
 ```

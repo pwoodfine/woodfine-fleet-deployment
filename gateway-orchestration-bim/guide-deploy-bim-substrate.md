@@ -1,11 +1,11 @@
 ---
 schema: foundry-doc-v1
-title: "Deploying the BIM Token Substrate"
+title: "Deploying the BIM Object Substrate"
 slug: guide-deploy-bim-substrate
 type: guide
 status: active
 bcsc_class: customer-internal
-last_edited: 2026-05-07
+last_edited: 2026-05-17
 editor: pointsav-engineering
 ---
 
@@ -19,7 +19,7 @@ editor: pointsav-engineering
 
 ## Purpose
 
-This guide covers provisioning the `woodfine-design-bim` sovereign token vault and
+This guide covers provisioning the `woodfine-bim-library` sovereign BIM Object vault and
 deploying `app-orchestration-bim` to serve it publicly at `bim.woodfinegroup.com`.
 
 All paths that reference the GitHub repository root use
@@ -27,25 +27,25 @@ All paths that reference the GitHub repository root use
 
 ## Procedure
 
-### Part 1 — Provision the Token Vault
+### Part 1 — Provision the BIM Object Vault
 
-The BIM token vault is a GitHub repository in the `woodfine` org. It holds all DTCG
-token files, regulatory overlays, and climate zone data for the deployment.
+The BIM Object vault is a GitHub repository in the `woodfine` org. It holds all DTCG
+object files, regulatory overlays, and climate zone data for the deployment.
 
 1. Create the repository on GitHub (one-time, Master action via `mcorp-administrator`):
-   - Repository: `woodfine/woodfine-design-bim`
+   - Repository: `woodfine/woodfine-bim-library`
    - Visibility: Private
-   - License: EUPL-1.2
+   - License: Apache-2.0
 
 2. Clone to the deployment host:
    ```bash
-   git clone git@github.com-mcorp:woodfine/woodfine-design-bim.git \
-       /opt/foundry/vaults/woodfine-design-bim
+   git clone git@github.com-mcorp:woodfine/woodfine-bim-library.git \
+       /opt/foundry/vaults/woodfine-bim-library
    ```
 
-3. Verify the token directory is populated:
+3. Verify the object directory is populated:
    ```bash
-   ls /opt/foundry/vaults/woodfine-design-bim/tokens/bim/
+   ls /opt/foundry/vaults/woodfine-bim-library/tokens/bim/
    # Expected: spatial.dtcg.json  elements.dtcg.json  systems.dtcg.json
    #           materials.dtcg.json  assemblies.dtcg.json  performance.dtcg.json
    #           identity-codes.dtcg.json  relationships.dtcg.json  climate-zones.dtcg.json
@@ -53,7 +53,7 @@ token files, regulatory overlays, and climate zone data for the deployment.
 
 ### Part 2 — Configure app-orchestration-bim
 
-`app-orchestration-bim` reads its token vault path from an environment variable at
+`app-orchestration-bim` reads its BIM Object vault path from an environment variable at
 startup.
 
 The systemd unit file is at:
@@ -65,7 +65,7 @@ Set the environment variable in the unit's `[Service]` section:
 
 ```ini
 [Service]
-Environment=BIM_DESIGN_SYSTEM_DIR=/opt/foundry/vaults/woodfine-design-bim
+Environment=BIM_DESIGN_SYSTEM_DIR=/opt/foundry/vaults/woodfine-bim-library
 Environment=PORT=9096
 ExecStart=/opt/foundry/bin/app-orchestration-bim
 User=foundry
@@ -146,7 +146,7 @@ dig +short bim.woodfinegroup.com
 
 ## Expected Outcome
 
-`bim.woodfinegroup.com` returns HTTP 200 with TLS active. The token catalog loads. The
+`bim.woodfinegroup.com` returns HTTP 200 with TLS active. The BIM Object catalog loads. The
 machine surface endpoint returns valid JSON. After all smoke tests pass, update
 `woodfine-fleet-deployment/gateway-orchestration-bim/MANIFEST.md`:
 
@@ -168,9 +168,9 @@ Run all four smoke tests after DNS resolves and TLS is active:
 curl -s https://bim.woodfinegroup.com/readyz
 # Expected: {"status":"ok"}
 
-# 2. Token catalog loads
-curl -s https://bim.woodfinegroup.com/tokens | grep -c "bim-token-card"
-# Expected: 8 (one per token category)
+# 2. BIM Object catalog loads
+curl -s https://bim.woodfinegroup.com/tokens | grep -c "bim-object-card"
+# Expected: 8 (one per BIM Object category)
 
 # 3. Machine surface
 curl -s https://bim.woodfinegroup.com/tokens.json | jq '.["elements.IfcWall"] | .ifc_class'
@@ -178,7 +178,7 @@ curl -s https://bim.woodfinegroup.com/tokens.json | jq '.["elements.IfcWall"] | 
 
 # 4. API endpoint
 curl -s https://bim.woodfinegroup.com/api/climate-zones | jq 'keys | length'
-# Expected: number of registered climate zone tokens
+# Expected: number of registered climate zone BIM Objects
 ```
 
 ## Rollback
