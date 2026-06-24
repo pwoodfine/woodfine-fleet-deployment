@@ -37,10 +37,9 @@ Per `~/Foundry/AGENT.md` § Session roles:
 
 ## Commit + promote
 
-- Commits via `~/Foundry/bin/commit-as-next.sh "<message>"`. Direct
-  `git commit` is blocked by the pre-commit gate (Phase 1.13).
-- Stage 6 promotion via `~/Foundry/bin/promote.sh` from the
-  Command Session, not from this Totebox.
+Commits via `~/Foundry/bin/commit-as-next.sh "<message>"` from archive root.
+**Stage 6:** No self-service promote (`self_service: none`). Request via outbox
+to `command@claude-code`. Command Session holds the canonical merge key.
 
 ## Artifacts produced here
 
@@ -59,20 +58,13 @@ the conflict via outbox to command session** — do not silently override.
 
 `get_session_brief(role="totebox", archive="project-woodfine")` replaces manually reading
 inbox.md, outbox.md, NOTAM.md, session-context.md. Call it first.
-`send_mailbox_message()` replaces hand-editing YAML frontmatter.
 
 | Tool | When to use |
 |---|---|
 | `get_session_brief` | **First call at startup** — inbox, outbox, NOTAM, session-context |
 | `send_mailbox_message` | Send any mailbox message (M-2/M-10 audit compliant) |
-| `query_mailbox` | Sweep archives — scope="all" in one call |
-| `get_doorman_status` | Tier A/B/C + circuit state |
-| `get_service_status` | Apprenticeship queue + audit-ledger counts |
 | `query_datagraph` | Entity lookup before answering about people/projects |
-| `ask_local` | OLMo 7B local inference — free, SYS-ADR-07-safe; graph context auto-injected |
-| `cast_apprenticeship_verdict` | Sign + submit verdict on a shadow-captured attempt |
-| `mutate_datagraph` | Create/update graph entities (requires explicit operator intent) |
-| `submit_extraction` | Queue prose for entity extraction pipeline |
+| `ask_local` | OLMo 7B local inference — free, SYS-ADR-07-safe |
 
 ## Artifact types — bright-line rules
 
