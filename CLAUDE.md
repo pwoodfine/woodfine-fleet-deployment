@@ -41,6 +41,14 @@ Commits via `~/Foundry/bin/commit-as-next.sh "<message>"` from archive root.
 **Stage 6:** No self-service promote (`self_service: none`). Request via outbox
 to `command@claude-code`. Command Session holds the canonical merge key.
 
+## Deploy model
+
+This archive has no foundry-prod push target — it does not serve a public
+site directly. (`~/Foundry/bin/push-to-prod.sh` targets: homepage, knowledge,
+marketing, design, software, gis, bim, bread — none map to this archive.)
+If that changes, add a target_<name>() to push-to-prod.sh and document the
+local preview port here.
+
 ## Artifacts produced here
 
 For each piece of work, classify per `~/Foundry/conventions/artifact-classification.yaml`:
