@@ -20,7 +20,7 @@ editor: pointsav-engineering
 
 ## Purpose
 
-This guide covers provisioning the `woodfine-bim-library` sovereign BIM Object vault and
+This guide covers provisioning the `woodfine-bim-library` BIM Object vault and
 deploying `app-orchestration-bim` to serve it publicly at `bim.woodfinegroup.com`.
 
 All paths that reference the GitHub repository root use

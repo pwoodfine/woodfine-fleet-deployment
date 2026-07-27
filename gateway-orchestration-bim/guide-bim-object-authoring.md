@@ -22,7 +22,7 @@ editor: pointsav-engineering
 
 ## Purpose
 
-This guide explains how to add a new BIM Object to a sovereign BIM Object vault. At v0.0.1,
+This guide explains how to add a new BIM Object to a BIM Object vault. At v0.0.1,
 BIM Objects are authored as DTCG JSON files committed directly to git. The four-zone CMS
 authoring interface is intended for v0.1.x and will wrap the same file operations.
 
@@ -86,7 +86,7 @@ one constraint from one jurisdiction.
 
 **Overlay file location:**
 ```text
-woodfine-design-bim/regulation/<jurisdiction-code>/
+woodfine-bim-library/regulation/<jurisdiction-code>/
 ├── overlay-<element-type>.ids     ← IDS 1.0 constraint file
 └── exclusion-<element-type>.ifc   ← IFC geometric fragment (if applicable)
 ```
@@ -162,7 +162,7 @@ two rows with the same `parameter` name and a `unit_system` discriminator field.
 
 **Validation checklist before commit:**
 
-- [ ] JSON is valid: `jq . woodfine-design-bim/tokens/bim/<file>.dtcg.json > /dev/null`
+- [ ] JSON is valid: `jq . woodfine-bim-library/tokens/bim/<file>.dtcg.json > /dev/null`
 - [ ] `ifc_class` exists in IFC 4.3 schema
 - [ ] `uniclass_ref` matches a Uniclass 2015 code
 - [ ] IDS files pass `ifctester` syntax check

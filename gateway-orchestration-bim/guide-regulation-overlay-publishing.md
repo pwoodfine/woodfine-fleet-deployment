@@ -69,7 +69,7 @@ Create `regulation/<jurisdiction>/<overlay-id>.ids` using the IDS 1.0 XML schema
     </ids:description>
     <ids:author>task@project-bim</ids:author>
     <ids:date>2026-05-06</ids:date>
-    <ids:purpose>Regulation overlay for woodfine-design-bim vault</ids:purpose>
+    <ids:purpose>Regulation overlay for woodfine-bim-library vault</ids:purpose>
   </ids:info>
 
   <ids:specifications>

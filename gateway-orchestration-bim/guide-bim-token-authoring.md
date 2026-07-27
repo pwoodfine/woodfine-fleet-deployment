@@ -10,14 +10,14 @@ last_edited: 2026-05-25
 editor: pointsav-engineering
 ---
 
-This guide explains how to add a new BIM Object to a sovereign object vault. At v0.0.1,
+This guide explains how to add a new BIM Object to an object vault. At v0.0.1,
 BIM Objects are authored as DTCG JSON files committed directly to git. The four-zone CMS
 authoring interface (`app-console-bim`) is planned for v0.1.x and will wrap the same file
 operations.
 
 ## Prerequisites
 
-- Access to the token vault repository (`woodfine-design-bim` or equivalent)
+- Access to the token vault repository (`woodfine-bim-library` or equivalent)
 - `git` configured with your commit identity
 - A text editor with JSON schema validation (optional but recommended)
 
@@ -200,7 +200,7 @@ Verify the new BIM Object appears at `/tokens` and the detail page loads at
 - DESIGN-TOKEN changes — additions to the BIM Object primitives in `pointsav-design-system`
   — require Master co-sign in frontmatter before the Root session commits to the design
   system.
-- Customer vault additions to `woodfine-design-bim` do not require Master co-sign; they
+- Customer vault additions to `woodfine-bim-library` do not require Master co-sign; they
   are customer-tier extensions.
 - The `app-privategit-bim` CMS engine is the planned production interface for this workflow
   (intended for v0.1.x). This guide documents the git-direct approach for v0.0.x.
