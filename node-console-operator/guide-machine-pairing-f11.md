@@ -49,16 +49,16 @@ No login prompt appears. No password is entered. The cartridges activate within 
 
 ## What Pairing Looks Like in Practice
 
-A practical example: Jennifer in the accounts team needs access to the Bookkeeper (F6)
-and People (F2) cartridges. She does not need Content (F4) or SLM (F9).
+A practical example: an accounts-team operator needs access to the Bookkeeper (F6)
+and People (F2) cartridges. They do not need Content (F4) or SLM (F9).
 
-1. Jennifer launches os-console on her workstation and presses F11.
-2. She selects Pair this machine. A QR code appears.
-3. She tells the Totebox administrator (Peter) that she needs pairing.
-4. Peter opens the admin panel, sees Jennifer's machine fingerprint listed as pending.
-5. Peter approves, granting access to F2 and F6 only.
-6. Jennifer's os-console activates F2 (People) and F6 (Bookkeeper). F4 and F9 remain
-   greyed out. She cannot access them regardless of what keys she presses.
+1. The operator launches os-console on their workstation and presses F11.
+2. They select Pair this machine. A QR code appears.
+3. They tell the Totebox administrator that a pairing request is waiting.
+4. The administrator opens the admin panel, sees the operator's machine fingerprint listed as pending.
+5. The administrator approves, granting access to F2 and F6 only.
+6. The operator's os-console activates F2 (People) and F6 (Bookkeeper). F4 and F9 remain
+   greyed out. They cannot access them regardless of what keys they press.
 
 The cartridge restriction is enforced by the Totebox, not by os-console's display. Even
 if os-console were modified to show all F-keys, the Totebox would reject any request
