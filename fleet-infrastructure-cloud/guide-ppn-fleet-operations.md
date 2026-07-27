@@ -1,3 +1,16 @@
+---
+schema: foundry-doc-v1
+title: "PPN Fleet Operations"
+slug: guide-ppn-fleet-operations
+type: guide
+section: infrastructure
+status: active
+audience: operators
+bcsc_class: customer-internal
+last_edited: 2026-07-27
+editor: command
+---
+
 # PPN Fleet Operations
 
 ## §1 Prerequisites
