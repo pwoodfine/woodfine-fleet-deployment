@@ -14,9 +14,9 @@ curl -sf http://127.0.0.1:9080/readyz | python3 -m json.tool | head -20
 curl -sf http://127.0.0.1:9081/health
 
 # Binaries must be present
-ls /srv/foundry/cargo-target/mathew/debug/service-fs
-ls /srv/foundry/cargo-target/mathew/debug/service-extraction
-ls /srv/foundry/cargo-target/mathew/debug/service-input
+ls /srv/foundry/cargo-target/<operator>/debug/service-fs
+ls /srv/foundry/cargo-target/<operator>/debug/service-extraction
+ls /srv/foundry/cargo-target/<operator>/debug/service-input
 ```
 
 If binaries are missing, rebuild from the project-data clone:
@@ -33,13 +33,13 @@ All three processes write to log files in `/tmp/`. Start them in order.
 ### 1. service-fs (jennifer-2 WORM + drop directory)
 
 ```bash
-J2=/home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer-2
+J2=/home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer-2
 
 env FS_BIND_ADDR=127.0.0.1:9103 \
     FS_MODULE_ID=jennifer \
     FS_LEDGER_ROOT=$J2/service-fs/worm \
     FS_WATCH_DROP_DIR=$J2/service-extraction/watch \
-    /srv/foundry/cargo-target/mathew/debug/service-fs >> /tmp/service-fs-j2.log 2>&1 &
+    /srv/foundry/cargo-target/<operator>/debug/service-fs >> /tmp/service-fs-j2.log 2>&1 &
 
 echo "service-fs j2 pid=$!"
 # Confirm it is up:
@@ -49,13 +49,13 @@ curl -sf --retry 5 --retry-delay 1 http://127.0.0.1:9103/healthz && echo "servic
 ### 2. service-extraction (jennifer-2 watcher → jennifer-1 live corpus)
 
 ```bash
-J1=/home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer
-J2=/home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer-2
+J1=/home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer
+J2=/home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer-2
 
 env EXTRACTION_WATCH_DIR=$J2/service-extraction/watch \
     EXTRACTION_EMIT_CORPUS_DIR=$J1/service-fs/data/service-content/ledgers \
     EXTRACTION_CORPUS_MODULE_ID=jennifer \
-    /srv/foundry/cargo-target/mathew/debug/service-extraction >> /tmp/service-extraction-j2.log 2>&1 &
+    /srv/foundry/cargo-target/<operator>/debug/service-extraction >> /tmp/service-extraction-j2.log 2>&1 &
 
 echo "service-extraction j2 pid=$!"
 ```
@@ -65,7 +65,7 @@ Drop files arrive in `EXTRACTION_WATCH_DIR`. After successful processing, the fi
 ### 3. service-input (migration API)
 
 ```bash
-J2=/home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer-2
+J2=/home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer-2
 ASSET_ROOT=/srv/foundry/deployments/cluster-totebox-jennifer
 
 env SERVICE_INPUT_BIND=127.0.0.1:9106 \
@@ -78,7 +78,7 @@ env SERVICE_INPUT_BIND=127.0.0.1:9106 \
     SERVICE_INPUT_LEDGER=$J2/service-input/ledger.jsonl \
     SERVICE_INPUT_CONTENT_ENDPOINT=http://127.0.0.1:9081 \
     SERVICE_INPUT_RATE_PER_MIN=6 \
-    /srv/foundry/cargo-target/mathew/debug/service-input >> /tmp/service-input-j2.log 2>&1 &
+    /srv/foundry/cargo-target/<operator>/debug/service-input >> /tmp/service-input-j2.log 2>&1 &
 
 echo "service-input pid=$!"
 curl -sf --retry 5 --retry-delay 1 http://127.0.0.1:9106/healthz && echo "service-input UP"
@@ -128,7 +128,7 @@ tail -f /tmp/service-extraction-j2.log
 sudo journalctl -u local-content -f --no-pager | grep -E "TIER|GRAPH|WATCHER"
 
 # Count CORPUS files (total — includes all modules)
-J1=/home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer
+J1=/home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer
 ls $J1/service-fs/data/service-content/ledgers/ | wc -l
 
 # Entity count in DataGraph
