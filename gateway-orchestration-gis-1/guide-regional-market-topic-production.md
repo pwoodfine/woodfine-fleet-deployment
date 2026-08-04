@@ -131,7 +131,7 @@ def wp_summary(title):
     url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{slug}"
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "regional-market-research/1.0 (jmwoodfine@gmail.com)"}
+        headers={"User-Agent": "regional-market-research/1.0 (your-contact@example.com)"}
     )
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.loads(r.read())
