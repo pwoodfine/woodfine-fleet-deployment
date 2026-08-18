@@ -18,15 +18,15 @@ This guide covers executing a quarterly cold-storage backup of the personnel arc
 ## Prerequisites
 
 - A secure external hard drive mounted at `/Volumes/Woodfine-Cold-Storage/`.
-- Network access to the personnel archive node (`136.117.130.104`).
-- SSH credentials for the `admin` account on the archive node.
+- Network access to the personnel archive node (`<REDACTED_IP>`).
+- SSH credentials for the `<REDACTED_SSH_ACCOUNT>` account on the archive node.
 
 ## Procedure
 
 Plug the secure hard drive into the operator workstation and run:
 
 ```bash
-rsync -avz --progress admin@136.117.130.104:/assets/personnel-maildir/ /Volumes/Woodfine-Cold-Storage/personnel-maildir/
+rsync -avz --progress <REDACTED_SSH_ACCOUNT>@<REDACTED_IP>:/assets/personnel-maildir/ /Volumes/Woodfine-Cold-Storage/personnel-maildir/
 ```
 
 ## Expected Outcome
@@ -34,7 +34,7 @@ rsync -avz --progress admin@136.117.130.104:/assets/personnel-maildir/ /Volumes/
 `rsync` completes with no errors. The `/Volumes/Woodfine-Cold-Storage/personnel-maildir/` directory is an exact copy of the archive node's maildir. Verify with:
 
 ```bash
-rsync --dry-run -avz admin@136.117.130.104:/assets/personnel-maildir/ /Volumes/Woodfine-Cold-Storage/personnel-maildir/
+rsync --dry-run -avz <REDACTED_SSH_ACCOUNT>@<REDACTED_IP>:/assets/personnel-maildir/ /Volumes/Woodfine-Cold-Storage/personnel-maildir/
 # Expected: 0 files to transfer
 ```
 
