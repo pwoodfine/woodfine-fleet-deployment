@@ -64,12 +64,13 @@ A few things look like hooks but are not:
 
 ## Tuning
 
-The hooks read no per-session config; they fire on every matching tool call. To disable
-temporarily for a single session, set the relevant environment variable:
-
-- `FOUNDRY_GATE_BYPASS_CHMOD=1` — allows chmod against identity/ (not recommended)
-- `FOUNDRY_GATE_BYPASS_SECRETS=1` — pre-commit gate skips secret scan
-- `FOUNDRY_GATE_BYPASS_SIZE=1` — pre-commit gate skips size check
+The hooks read no per-session config; they fire on every matching tool call. A small number
+of them support a temporary, single-session bypass via environment variable for genuine
+edge cases (e.g. a legitimate large-binary commit tripping the size check). **The exact
+variable names are intentionally not listed in this public guide** — they gate real
+defensive tooling (identity-store protection, secret scanning, size checks), and the guide's
+audience for this specific detail is workspace operators, not the general public. Ask the
+Command Session operator directly if you have a legitimate need.
 
 To disable permanently, edit `.agent/engines/claude-code/settings.json` and remove the
 relevant `PreToolUse` or `PostToolUse` entry. The change takes effect on the next session
