@@ -41,7 +41,7 @@ ssh user@<LOCAL_IP_OF_LAPTOP_B> "sudo /tmp/provision_wireguard_hub.sh"
 
 ### Step 3 — Record the hub public key
 
-The script outputs a WireGuard **Hub Public Key** on completion. Record this key in `INVENTORY.yaml` at the repository root. It is the anchor identity for all subsequent spoke authorizations (MacBook, iMac, etc.).
+The script outputs a WireGuard **Hub Public Key** on completion. Record this key in `inventory.yaml` at the repository root. It is the anchor identity for all subsequent spoke authorizations (MacBook, iMac, etc.).
 
 ---
 

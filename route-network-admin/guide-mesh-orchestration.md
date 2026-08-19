@@ -20,7 +20,7 @@ Covers generating WireGuard key pairs and subnet routing tables for the Woodfine
 - SSH access to each fleet node (cloud relay, on-premises, and leased endpoints).
 - WireGuard installed on all nodes: `sudo apt-get install wireguard`
 - Secure local storage for private keys (never committed to git or transmitted).
-- Write access to `INVENTORY.yaml` in this repository.
+- Write access to `inventory.yaml` in this repository.
 
 This guide is in development. The steps below reflect the design intent; exact IP ranges and peer list will be documented when the route-network-admin cluster moves to Active state.
 
@@ -46,7 +46,7 @@ Store private keys securely on each respective node. Collect public keys central
 
 ## Subnet assignment
 
-The mesh uses the `10.x.x.x/24` range. Assign one IP per node. Document the assignment in `INVENTORY.yaml` at the repository root.
+The mesh uses the `10.x.x.x/24` range. Assign one IP per node. Document the assignment in `inventory.yaml` at the repository root.
 
 ## Steps
 
