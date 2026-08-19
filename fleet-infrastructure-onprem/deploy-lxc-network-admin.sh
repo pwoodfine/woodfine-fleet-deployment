@@ -6,7 +6,7 @@ echo " 🚀 IGNITING LXC DEPLOYMENT: SOVEREIGN NETWORK LEDGER"
 echo "========================================================"
 
 CONTAINER_NAME="pointsav-network-ledger"
-MONOREPO_ROOT="/home/mathew/Foundry/factory-pointsav/pointsav-monorepo"
+MONOREPO_ROOT="${MONOREPO_ROOT:?MONOREPO_ROOT must be set (2026-08-19 GitHub-exposure remediation - no real-value default)}"
 
 # 1. Verify UI Artifacts Exist
 if [ ! -d "$MONOREPO_ROOT/os-network-admin/public" ]; then

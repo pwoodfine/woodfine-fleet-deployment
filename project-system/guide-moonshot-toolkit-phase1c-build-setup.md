@@ -15,7 +15,7 @@ Rust stable is required. Verify with:
 rustup show
 ```
 
-The workspace VM has Rust installed at `/home/mathew/.cargo/`. The `moonshot-toolkit`
+The workspace VM has Rust installed at `/home/<operator>/.cargo/`. The `moonshot-toolkit`
 crate requires `rust-version = "1.74"` or later per `Cargo.toml`.
 
 ### AArch64 Cross-Compile Toolchain

@@ -106,12 +106,12 @@ touch /srv/foundry/data/yoyo-disabled
 
 **Count enrichment DPO pairs accumulated since last corpus reset:**
 ```bash
-ls /home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer/service-fs/data/training-corpus/feedback/enrichment-*.jsonl 2>/dev/null | wc -l
+ls /home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer/service-fs/data/training-corpus/feedback/enrichment-*.jsonl 2>/dev/null | wc -l
 ```
 
 **Spot-check the most recent pair (verify it contains document text, not prompt examples):**
 ```bash
-cat $(ls -t /home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer/service-fs/data/training-corpus/feedback/enrichment-*.jsonl 2>/dev/null | head -1) | python3 -c "
+cat $(ls -t /home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer/service-fs/data/training-corpus/feedback/enrichment-*.jsonl 2>/dev/null | head -1) | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
 print('PROMPT (first 200 chars):', d['prompt'][:200])
@@ -153,7 +153,7 @@ ls /srv/foundry/data/training-pending/*.json | wc -l   # must be > 0
 
 **Gate 2 — ML libraries installed on the batch VM** (requires VM to be running):
 ```bash
-ssh -i ~/.ssh/google_compute_engine mathew@10.128.0.24 \
+ssh -i ~/.ssh/google_compute_engine <operator>@<VM_INTERNAL_IP> \
   "~/training-venv/bin/python3 -c 'import trl; print(trl.__version__)'"
 ```
 Expected: prints a version number such as `1.5.1`.
@@ -173,7 +173,7 @@ today's date and the cycle checks at fire time.
 
 **After a training run**, the adapter is written to:
 ```bash
-ls /home/mathew/adapters/apprenticeship-pointsav-incremental/
+ls /home/<operator>/adapters/apprenticeship-pointsav-incremental/
 ```
 
 Monitor Phase 6 during the cycle:
@@ -213,7 +213,7 @@ curl -s http://127.0.0.1:9080/readyz | python3 -c "import sys,json; d=json.load(
 curl -sf http://127.0.0.1:9081/healthz | python3 -c "import sys,json; d=json.load(sys.stdin); print(f\"entities={d.get('entity_count')}\")"
 
 # Enrichment corpus size
-ls /home/mathew/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer/service-fs/data/training-corpus/feedback/enrichment-*.jsonl 2>/dev/null | wc -l
+ls /home/<operator>/deployments/woodfine-fleet-deployment/cluster-totebox-jennifer/service-fs/data/training-corpus/feedback/enrichment-*.jsonl 2>/dev/null | wc -l
 
 # Training markers
 ls /srv/foundry/data/training-pending/*.json 2>/dev/null | wc -l

@@ -5,7 +5,7 @@ set -euo pipefail
 REMOTE_TARGET="<REDACTED_IP>"
 REMOTE_USER="operator"
 TODAY=$(date +%Y-%m-%d)
-LOCAL_PS="/home/mathew/Foundry/fleet-woodfine/woodfine-fleet-deployment/media-marketing-landing/app-mediakit-telemetry"
+LOCAL_PS="${LOCAL_PS:?LOCAL_PS must be set (2026-08-19 GitHub-exposure remediation - no real-value default)}"
 
 echo "[SYSTEM] Extracting flawless reports via V6 Strict Pull Diode..."
 mkdir -p "${LOCAL_PS}/outbox"
