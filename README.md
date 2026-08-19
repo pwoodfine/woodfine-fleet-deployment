@@ -99,7 +99,7 @@ Heavy archive data — high-resolution architectural drawings, IoT logs, extensi
 
 The master routing node (NODE-IMAC-12) holds the cryptographic keys for the entire network. It dials outbound to the cloud relay. The public internet cannot dial inbound to it. Physical custody of network keys is retained by Woodfine regardless of any cloud provider decision.
 
-There is no central MBA registry. The topology is recorded in the Command Session's `pairings.yaml` and `MANIFEST.md`.
+There is no central MBA registry. The topology is recorded in this catalog's own internal manifest records.
 
 ### Totebox Archives
 
