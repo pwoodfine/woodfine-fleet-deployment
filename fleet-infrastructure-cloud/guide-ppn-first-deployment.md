@@ -4,7 +4,7 @@
 This guide walks through the five-step sequence to bring up a PointSav Private Network
 for the first time on the Part A-lite topology: one GCP cloud relay node
 (`fleet-infrastructure-cloud-1`, 10.8.0.9), one on-premises operator node (Laptop A,
-`station-workplace-mathew-1`, 10.8.0.6), and the WireGuard hub on Laptop B
+`station-workplace-<operator>-1`, 10.8.0.6), and the WireGuard hub on Laptop B
 (`route-network-admin-1`, 10.8.0.1).
 
 All five steps are unblocked and can run today. No additional infrastructure or
@@ -35,20 +35,20 @@ cargo build --release -p service-ppn-pairing
 **Copy binary and systemd unit to the GCP VM:**
 
 ```bash
-scp target/release/service-ppn-pairing mathew@10.8.0.9:/usr/local/bin/
-scp infrastructure/systemd/local-ppn-pairing.service mathew@10.8.0.9:/etc/systemd/system/
+scp target/release/service-ppn-pairing <operator>@10.8.0.9:/usr/local/bin/
+scp infrastructure/systemd/local-ppn-pairing.service <operator>@10.8.0.9:/etc/systemd/system/
 ```
 
 **Enable and start the service on the GCP VM:**
 
 ```bash
-ssh mathew@10.8.0.9 "sudo systemctl daemon-reload && sudo systemctl enable --now local-ppn-pairing"
+ssh <operator>@10.8.0.9 "sudo systemctl daemon-reload && sudo systemctl enable --now local-ppn-pairing"
 ```
 
 **Verify the service is running:**
 
 ```bash
-ssh mathew@10.8.0.9 "systemctl is-active local-ppn-pairing"
+ssh <operator>@10.8.0.9 "systemctl is-active local-ppn-pairing"
 # Expected: active
 ```
 
@@ -92,7 +92,7 @@ cargo build --release -p os-network-admin
 **Copy binary to Laptop A:**
 
 ```bash
-scp target/release/os-network-admin mathew@10.8.0.6:~/bin/os-network-admin
+scp target/release/os-network-admin <operator>@10.8.0.6:~/bin/os-network-admin
 ```
 
 Ensure `~/bin/` is on the `PATH` on Laptop A, or use the full path when running.

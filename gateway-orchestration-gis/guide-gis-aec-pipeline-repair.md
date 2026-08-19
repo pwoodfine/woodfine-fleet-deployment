@@ -54,8 +54,8 @@ ls -la "$WORK/.night"*-complete 2>/dev/null || echo "no complete markers found"
 
 Expected after a full five-night run:
 ```
--rw-r--r-- 1 mathew foundry 0 Jun 10 06:14 .night4-complete
--rw-r--r-- 1 mathew foundry 0 Jun 10 06:14 .night5-complete
+-rw-r--r-- 1 <operator> foundry 0 Jun 10 06:14 .night4-complete
+-rw-r--r-- 1 <operator> foundry 0 Jun 10 06:14 .night5-complete
 ```
 
 **Skip flags** suppress re-download of slow external data sources when a

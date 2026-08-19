@@ -96,8 +96,8 @@ sudo systemctl enable --now local-vm-host
 **On Laptop A (10.8.0.6) and Laptop B (10.8.0.1):** copy binary via SCP, then enable:
 ```bash
 # From GCP — copy to Laptop A
-scp /usr/local/bin/service-vm-host mathew@10.8.0.6:/tmp/
-scp infrastructure/systemd/ppn/local-vm-host.service mathew@10.8.0.6:/tmp/
+scp /usr/local/bin/service-vm-host <operator>@10.8.0.6:/tmp/
+scp infrastructure/systemd/ppn/local-vm-host.service <operator>@10.8.0.6:/tmp/
 
 # On Laptop A
 sudo mv /tmp/service-vm-host /usr/local/bin/

@@ -151,7 +151,7 @@ done
 ```
 
 The `2775` mode (sgid + group-writable) ensures both the Doorman
-service user and capture-edit.py (running as workspace user `mathew`,
+service user and capture-edit.py (running as workspace user `<operator>`,
 also in `foundry` group) can read+write. Any non-root user that needs
 queue access must be added to the `foundry` group via
 `sudo usermod -a -G foundry <user>`.
@@ -456,7 +456,7 @@ sudo systemctl restart local-doorman.service
 Per `feedback_never_chmod_canonical_identity_store.md`, this rule
 applies ONLY to the audit-ledger directory, NOT to identity store
 paths. Identity store at `/srv/foundry/identity/` is `0600`
-mathew-only by deliberate workspace v0.1.36+ policy.
+<operator>-only by deliberate workspace v0.1.36+ policy.
 
 ### 5.4 Queue dir not draining (post-§7C)
 
@@ -580,7 +580,7 @@ runs.
 When per-tenant export is needed (e.g., customer-disclosure ask):
 ```bash
 sudo cp -r /var/lib/local-doorman/audit/<tenant>/ /tmp/<tenant>-audit-$(date +%F)/
-sudo chown -R mathew:foundry /tmp/<tenant>-audit-$(date +%F)/
+sudo chown -R <operator>:foundry /tmp/<tenant>-audit-$(date +%F)/
 ```
 
 Tenant data MUST NOT cross tenant boundaries — only export the

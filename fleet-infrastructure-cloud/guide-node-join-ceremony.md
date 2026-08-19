@@ -114,7 +114,7 @@ The `nodes.jsonl` entry format:
   "public_key": "<base64>",
   "assigned_ip": "10.8.0.4",
   "approved_at": "2026-05-28T10:15:42Z",
-  "approved_by": "os-network-admin@station-workplace-mathew-1"
+  "approved_by": "os-network-admin@station-workplace-<operator>-1"
 }
 ```
 
