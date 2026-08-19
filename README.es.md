@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/woodfine/woodfine-media-assets/main/ASSET-SIGNET-MASTER.svg" width="72" alt="Woodfine Management Corp.">
+<img src="https://raw.githubusercontent.com/woodfine/woodfine-media-assets/main/asset-signet-master.svg" width="72" alt="Woodfine Management Corp.">
 
 # Woodfine Management Corp.
 ### *El Despliegue Institucional en Vivo de la Plataforma PointSav*
